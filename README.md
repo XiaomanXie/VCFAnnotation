@@ -45,7 +45,7 @@ The annotated variants are included in the output csv file.
 
 ## Code
 ### utils/vcf.py
-This script includes classes to store variant information and functions to load and parse VCF file. It fulfills some function of the cyvcf2 module. 
+This script includes classes to store variant information and functions to load and parse VCF file. The VCF loader can be replaced by the 'cyvcf2' module.  
 
 ### utils/exac.py
 This script contails a function to query allele frequency and variant consequence for a given variant from ExAC. An Internet connection is required to query via the ExAC API.
