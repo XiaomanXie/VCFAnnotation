@@ -30,15 +30,15 @@ python annotate.py -vcf Challenge_data_\(1\).vcf -o Annotated_VCF.csv
 The annotated variants are included in the output csv file. 
 | Column | Description | Note |
 |     :---:    |     :---:      | :--- |
-| Chrom   | Chromosome     | Same as the CHROM field in the VCF file.  |
-| Pos     | Position       | Same as the POS field in the VCF file.|
-|Ref|reference base(s) |Same as the POS field in the VCF file.|
-|Alt| alternative bases|While the ALT field in VCF file is a comma separated list, there is only one allele in the Alt field of the annotated file.|
-|Type| Variant Type| The type of allele, either snp, mnp, ins, del, or complex. Parsed from the 'TYPE' sub-field of INFO.|
+| Chrom   | Chromosome     | CHROM field in the VCF file.  |
+| Pos     | Position       | POS field in the VCF file.|
+|Ref|Reference base(s) |REF field in the VCF file.|
+|Alt| Alternative base(s)|While the ALT field in VCF file is a comma separated list, there is only one allele in the Alt field of the annotated file.|
+|Type| Variant type| The type of allele, either snp, mnp, ins, del, or complex. Parsed from the 'TYPE' sub-field of INFO.|
 |Effect| Effect/Consequence of the variant (missense, intergenic, etc.) |The effect of each variant is the 'major consequence' obtained from ExAC. If there are multiple major consequences for one variant, they are ranked according to the severity reported by Ensembl. The variant is annotated with the most deleterious consequence.|
-|Read Depth|Depth of sequence coverage at the site of variation. | Total read depth at the locus. Parsed from the 'DP' sub-field of INFO.|
-|Alt Count| Number of reads supporting the variant.|Alternate allele observations, with partial observations recorded fractionally. Parsed from the 'AO' sub-field of INFO. |
-|Alt Ratio| Percentage of reads supporting the variant versus those supporting reference reads.|The ratio of Alt count to Read Depth.|
+|Read Depth|Depth of sequence coverage at the site of variation | Total read depth at the locus. Parsed from the 'DP' sub-field of INFO.|
+|Alt Count| Number of reads supporting the variant|Alternate allele observations, with partial observations recorded fractionally. Parsed from the 'AO' sub-field of INFO. |
+|Alt Ratio| Percentage of reads supporting the variant versus those supporting reference reads|The ratio of Alt count to Read Depth.|
 |Allele Frequency| Allele frequency in the range (0,1]| Allele frequency of variant from ExAC API. |
 
 
