@@ -1,4 +1,6 @@
 # VCFAnnotation
+Mia(Xiaoman) Xie [xiaoman2@illinois.edu]
+University of Illinois Urbana-Champaign
 
 VCFAnnotation is a small tool written in Python to annotate each variant in a given VCF files with the information 
 parsed from the VCF file as well as annotations extracted from ExAC. For variants with multiple possible alternative 
