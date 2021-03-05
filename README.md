@@ -34,33 +34,12 @@ The annotated variants are included in the output csv file.
 | Pos     | Position       | Same as the POS field in the VCF file.|
 |Ref|reference base(s) |Same as the POS field in the VCF file.|
 |Alt| alternative bases|While the ALT field in VCF file is a comma separated list, there is only one allele in the Alt field of the annotated file.|
-|Type| Variant Type| The variant type of the alternative allele is parsed from the 'TYPE' sub-field of INFO.|
-|Effect| Variant consequence | |
-|Read Depth|Depth of sequence coverage at the site of variation. | |
-|Alt Count| Number of reads supporting the variant.| |
-|Alt Ratio| Percentage of reads supporting the variant versus those supporting reference reads.| |
-|Allele Frequency| Allele frequency of variant from ExAC API.| - |
+|Type| Variant Type| The type of allele, either snp, mnp, ins, del, or complex. Parsed from the 'TYPE' sub-field of INFO.|
+|Effect| Effect/Consequence of the variant (missense, intergenic, etc.) |The effect of each variant is the 'major consequence' obtained from ExAC. If there are multiple major consequences for one variant, they are ranked according to the severity reported by Ensembl. The variant is annotated with the most deleterious consequence.|
+|Read Depth|Depth of sequence coverage at the site of variation. | Total read depth at the locus. Parsed from the 'DP' sub-field of INFO.|
+|Alt Count| Number of reads supporting the variant.|Alternate allele observations, with partial observations recorded fractionally. Parsed from the 'AO' sub-field of INFO. |
+|Alt Ratio| Percentage of reads supporting the variant versus those supporting reference reads.|The ratio of Alt count to Read Depth.|
+|Allele Frequency| Allele frequency in the range (0,1]| Allele frequency of variant from ExAC API. |
 
-This repository is for the Tempus Bioinformatics Technical Challenge as described in the TempusBioinformaticsChallenge.pdf.
 
-The instructions were:
 
-For this challenge, you are asked to prototype a variant annotation tool. We will provide you with a VCF file, and you will create a small software program to output a table annotating each variant in the file. Each variant must be annotated with the following pieces of information:
-
-Type of variation (Substitution, Insertion, Silent, Intergenic, etc.) If there are multiple possibilities, annotate with the most deleterious possibility.
-Depth of sequence coverage at the site of variation.
-Number of reads supporting the variant.
-Percentage of reads supporting the variant versus those supporting reference reads.
-Allele frequency of variant from Broad Institute ExAC Project API (API documentation is available here: http://exac.hms.harvard.edu/)
-Additional optional information from ExAC that you feel might be relevant.
-Additional instructions were "It is acceptable to use variant annotation tools (snpEff, Oncotator, VEP, etc.) for addition of gene, effect and transcript information. All I/O, transformations, and external source interactions must be done with standard libraries (numerical libraries or data frame libraries such as pandas are also acceptable).
-
-Please use this opportunity to demonstrate your knowledge of software development and your abilities to think critically about how a toy program like this should be engineered."
-
-How to Run
-Run build.sh to create the environment if you like, but the environment.yml file uploaded simplifies the process and all you need to run is simply :
-
-bash annotate.sh
-to create the environment from the YML file, it installs VEP, annotates with VEP, then runs annotate.py and creates the final resulting VCF file, final.vcf.
-
-FINAL FILE ("final.vcf") has "Custom" column at the end of the columns. This contains:
