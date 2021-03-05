@@ -67,7 +67,7 @@ def GetInfo(var):
     #ro = var.INFO.get('RO')
     if len(var.ALT) == 1:
         return [[chrom,str(pos),ref,alt[0],tp,dp,int(ao),int(ao)/dp]]
-    else:
+    else: # different alternative alleles are annotated separately
         tp = tp.rstrip().split(',')
         ao = ao.rstrip().split(',')
         ao = [int(e) for e in ao]

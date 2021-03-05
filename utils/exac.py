@@ -13,6 +13,7 @@ effect: str, the most severe consequence of the variant ('NA' if the information
 import requests
 
 def GetExAC(id):
+    # ranked variant severity from Ensembl
     effect_severity = [
         'transcript_ablation',
         'splice_acceptor_variant',
@@ -62,11 +63,13 @@ def GetExAC(id):
         allele_freq = "NA"
                 
     try:
+        # variants are annotated with the most deleterious effect
         effect = []
         for vep in data['vep_annotations']:
             effect.append(vep['major_consequence'])
         effect = list(set(effect))
         effect = sorted(effect, key=lambda x: rank[x])[0]
     except: 
+        # variants don't have record in ExAC are annoted with 'NA'
         effect = "NA"
     return allele_freq , effect
