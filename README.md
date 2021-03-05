@@ -13,6 +13,12 @@ Each variant is annotated with the following pieces of information:
 6. Allele frequency of variant from ExAC API (API documentation is available here:
 http://exac.hms.harvard.edu/).
 
+## Run
+Please first download the repository:
+```
+git clone 
+```
+
 This repository is for the Tempus Bioinformatics Technical Challenge as described in the TempusBioinformaticsChallenge.pdf.
 
 The instructions were:
