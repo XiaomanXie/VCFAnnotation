@@ -16,8 +16,30 @@ http://exac.hms.harvard.edu/).
 ## Run
 Please first download the repository:
 ```
-git clone 
+git clone https://github.com/XiaomanXie/VCFAnnotation.git
 ```
+In the repository, run the main script annotate.py using the following command to annotate the input VCF file. Names in < > are for the user to replace with the appropriate file names.
+```
+python annotate.py -vcf <input.vcf> -o <output.csv>
+```
+If you wish to use the sample VCF file, please use:
+```
+python annotate.py -vcf Challenge_data_\(1\).vcf -o Annotated_VCF.csv
+```
+## Output file
+The annotated variants are included in the output csv file. 
+| Column | Meaning | Description |
+|     :---:    |     :---:      |          ---: |
+| Chrom   | git status     | git status    |
+| Pos     | git diff       | git diff      |
+|Ref| | |
+|Alt| | |
+|Type| | |
+|Effect| | |
+|Read Depth| | |
+|Alt Count| | |
+|Alt Ratio| | |
+|Allele Frequency| | |
 
 This repository is for the Tempus Bioinformatics Technical Challenge as described in the TempusBioinformaticsChallenge.pdf.
 
