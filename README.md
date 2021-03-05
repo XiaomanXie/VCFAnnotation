@@ -1,20 +1,17 @@
 # VCFAnnotation
 
 VCFAnnotation is a small tool written in Python to annotate each variant in a given VCF files with the information 
-parse from the VCF file as well as annotations extracted from ExAC. It can report monomorphic sites, sites with reference alleles inconsistent with the reference genome, sites with invalid genotypes, non-SNP site (e.g. indels), and all sites with allele frequencies greater than ''0.5''. After you passed the checking, you can go on to run rvtests - rare-variant test software.
-This program is used to annotate each variant in the provided vcf file. The program is written in python 3.6, please make sure you have the right version installed.
-For this challenge, you are asked to prototype a variant annotation tool. We will provide you with
-a VCF file, and you will create a small software program to annotate each variant in the file.
-Each variant must be annotated with the following pieces of information:
-1. Type of variation (substitution, insertion, CNV, etc.) and their effect (missense, silent,
-intergenic, etc.). If there are multiple effects, annotate with the most deleterious
-possibility.
-2. Depth of sequence coverage at the site of variation.
-3. Number of reads supporting the variant.
-4. Percentage of reads supporting the variant versus those supporting reference reads.
-5. Allele frequency of variant from ExAC API (API documentation is available here:
+parse from the VCF file as well as annotations extracted from ExAC. For variants with multiple possible alternative 
+allels at the same location, alternative alleles are separated into different rows so that each row has only one 
+alternative allele, annotated with correponding variant type and effect.
+Each variant is annotated with the following pieces of information:
+1. Type of variation (snp(Single Nucleotide Polymorphism), mnp(Multiple Nucleotide Polymorphism), del(Deletion), ins(Insertion), complex(Complex Variant))
+2. Effect/Consequence of the variant (missense, intergenic, etc.). Variant major consequence is obtained from ExAC. If there are multiple effects, the variant is annotated with the most deleterious possibility according to Ensembl variant severity (http://useast.ensembl.org/info/genome/variation/prediction/predicted_data.html). 
+3. Depth of sequence coverage at the site of variation.
+4. Number of reads supporting the variant.
+5. Percentage of reads supporting the variant versus those supporting reference reads.
+6. Allele frequency of variant from ExAC API (API documentation is available here:
 http://exac.hms.harvard.edu/).
-6. Any additional annotations that you feel might be relevant.
 
 This repository is for the Tempus Bioinformatics Technical Challenge as described in the TempusBioinformaticsChallenge.pdf.
 
