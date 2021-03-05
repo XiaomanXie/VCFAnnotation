@@ -28,18 +28,18 @@ python annotate.py -vcf Challenge_data_\(1\).vcf -o Annotated_VCF.csv
 ```
 ## Output file
 The annotated variants are included in the output csv file. 
-| Column | Meaning | Description |
-|     :---:    |     :---:      |          ---: |
-| Chrom   | git status     | git status    |
-| Pos     | git diff       | git diff      |
-|Ref| | |
-|Alt| | |
-|Type| | |
-|Effect| | |
-|Read Depth| | |
-|Alt Count| | |
-|Alt Ratio| | |
-|Allele Frequency| | |
+| Column | Description | Note |
+|     :---:    |     :---:      | :--- |
+| Chrom   | Chromosome     | Same as the CHROM field in the VCF file.  |
+| Pos     | Position       | Same as the POS field in the VCF file.|
+|Ref|reference base(s) |Same as the POS field in the VCF file.|
+|Alt| alternative bases|While the ALT field in VCF file is a comma separated list, there is only one allele in the Alt field of the annotated file.|
+|Type| Variant Type| The variant type of the alternative allele is parsed from the 'TYPE' sub-field of INFO.|
+|Effect| Variant consequence | |
+|Read Depth|Depth of sequence coverage at the site of variation. | |
+|Alt Count| Number of reads supporting the variant.| |
+|Alt Ratio| Percentage of reads supporting the variant versus those supporting reference reads.| |
+|Allele Frequency| Allele frequency of variant from ExAC API.| - |
 
 This repository is for the Tempus Bioinformatics Technical Challenge as described in the TempusBioinformaticsChallenge.pdf.
 
