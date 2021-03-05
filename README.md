@@ -4,8 +4,8 @@ University of Illinois Urbana-Champaign<br/><br/>
 
 VCFAnnotation is a small tool written in Python to annotate each variant in a given VCF file with the information 
 parsed from the input VCF file as well as annotations extracted from ExAC. For variants with multiple possible alternative 
-allels at the same locus, alternative alleles are separated into different rows so that each row has only one 
-alternative allele to be annotated with correponding variant type and effect.<br/><br/>
+allels at the same locus, alternative alleles are separated into different rows so that each row in the output file has only one 
+alternative allele.<br/><br/>
 Each variant is annotated with the following pieces of information:
 1. Type of variation (snp(Single Nucleotide Polymorphism), mnp(Multiple Nucleotide Polymorphism), del(Deletion), ins(Insertion), complex(Complex Variant))
 2. Effect/Consequence of the variant (missense, intergenic, etc.). Variant major consequence is obtained from ExAC. If there are multiple effects, the variant is annotated with the most deleterious possibility according to Ensembl variant severity (http://useast.ensembl.org/info/genome/variation/prediction/predicted_data.html). 
